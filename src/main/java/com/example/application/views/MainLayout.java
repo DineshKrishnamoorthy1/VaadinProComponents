@@ -2,7 +2,17 @@ package com.example.application.views;
 
 
 import com.example.application.views.about.AboutView;
+import com.example.application.views.board.BoardView;
+import com.example.application.views.chart.Chart;
+import com.example.application.views.confirmdialog.ConfirmDialogs;
+import com.example.application.views.cookies.CookiesExample;
+import com.example.application.views.crud.Display;
+import com.example.application.views.crudexample.CrudOpenEditor;
+import com.example.application.views.gridpro.GridProExample;
+import com.example.application.views.gridview.GridView;
 import com.example.application.views.helloworld.HelloWorldView;
+import com.example.application.views.maps.MapView;
+import com.example.application.views.richtexteditor.RichTextEditorPro;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -120,8 +130,16 @@ public class MainLayout extends AppLayout {
     private MenuItemInfo[] createMenuItems() {
         return new MenuItemInfo[]{ //
                 new MenuItemInfo("Hello World", "la la-globe", HelloWorldView.class), //
+                new MenuItemInfo("Board", "la la-file", BoardView.class), //
+                new MenuItemInfo("Chart", "la la-file", Chart.class), //
+                new MenuItemInfo("GridPro","la la-globe", GridView.class),//
+                new MenuItemInfo("CRUD","la la-globe", CrudOpenEditor.class),//
+                new MenuItemInfo("RichTextEditor","la la-globe", RichTextEditorPro.class),//
+                new MenuItemInfo("ConfirmDialogBox","la la-globe", ConfirmDialogs.class),//
+                new MenuItemInfo("Cookies","la la-globe", CookiesExample.class),//
 
-                new MenuItemInfo("About", "la la-file", AboutView.class), //
+
+
 
         };
     }
