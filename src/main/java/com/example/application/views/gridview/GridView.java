@@ -20,19 +20,7 @@ public class GridView extends Div {
     private Grid.Column<Person> lastnamecolumn;
 
     public GridView() {
-       /* GridPro<Person> grid = new GridPro<>(Person.class);
 
-
-        grid.addEditColumn(Person::getFirstName)
-                .text(Person::setFirstName)
-                .setHeader("First name");
-
-        grid.addEditColumn(Person::getLastName)
-                .text(Person::setLastName)
-                .setHeader("Last name");
-
-
-        add(grid);*/
         // Create a listing component for a bean type
         GridPro<Person> grid = new GridPro<>(Person.class);
 
