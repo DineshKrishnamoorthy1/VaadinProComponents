@@ -2,12 +2,18 @@ package com.example.application.views.crudexample;
 
 
 import com.example.application.views.MainLayout;
+import com.vaadin.flow.component.Html;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.crud.BinderCrudEditor;
 import com.vaadin.flow.component.crud.Crud;
 import com.vaadin.flow.component.crud.CrudEditor;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.EmailField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
@@ -20,23 +26,39 @@ import java.util.List;
 public class CrudOpenEditor extends Div {
 
     private Crud<Person> crud;
+    private PersonDataProvider dataProvider;
+
 
     private String FIRST_NAME = "firstName";
     private String LAST_NAME = "lastName";
     private String EMAIL = "email";
     private String PROFESSION = "profession";
+    private String EDIT_COLUMN = "vaadin-crud-edit-column";
+
 
     public CrudOpenEditor() {
-        crud = new Crud<>(
-                Person.class,
-                createEditor()
-        );
+        crud = new Crud<>(Person.class, createEditor());
+        crud.addNewListener(event -> {
+            Person person = event.getItem();
+            person.setEmail("@zucisystems.com");
+            person.setProfession("Developer");
+            crud.getEditor().setItem(person);
+        });
 
         setupGrid();
         setupDataProvider();
-
         add(crud);
     }
+
+    private Grid<Person> createGrid() {
+        Grid<Person> grid = new Grid<>();
+        grid.addColumn(Person::getFirstName).setHeader("First name").setSortable(true);
+        grid.addColumn(Person::getLastName).setHeader("Last name").setSortable(true);
+        grid.addColumn(Person::getEmail).setHeader("Email").setSortable(true);
+        grid.addColumn(Person::getProfession).setHeader("Profession").setSortable(true);
+        return grid;
+    }
+
 
     private CrudEditor<Person> createEditor() {
         TextField firstName = new TextField("First name");
@@ -55,26 +77,20 @@ public class CrudOpenEditor extends Div {
     }
 
     private void setupGrid() {
-        // tag::snippet[]
         Grid<Person> grid = crud.getGrid();
 
-        // Remove edit column
-        Crud.removeEditColumn(grid);
-        // grid.removeColumnByKey(EDIT_COLUMN);
-        // grid.removeColumn(grid.getColumnByKey(EDIT_COLUMN));
 
-        // Open editor on double click
         grid.addItemDoubleClickListener(event ->
                 crud.edit(event.getItem(), Crud.EditMode.EXISTING_ITEM)
         );
-        // end::snippet[]
 
         // Only show these columns (all columns shown by default):
         List<String> visibleColumns = Arrays.asList(
                 FIRST_NAME,
                 LAST_NAME,
                 EMAIL,
-                PROFESSION
+                PROFESSION,
+                EDIT_COLUMN
         );
         grid.getColumns().forEach(column -> {
             String key = column.getKey();
@@ -88,9 +104,11 @@ public class CrudOpenEditor extends Div {
                 grid.getColumnByKey(FIRST_NAME),
                 grid.getColumnByKey(LAST_NAME),
                 grid.getColumnByKey(EMAIL),
-                grid.getColumnByKey(PROFESSION)
+                grid.getColumnByKey(PROFESSION),
+                grid.getColumnByKey(EDIT_COLUMN)
         );
     }
+
 
     private void setupDataProvider() {
         PersonDataProvider dataProvider = new PersonDataProvider();
@@ -102,4 +120,5 @@ public class CrudOpenEditor extends Div {
                 dataProvider.persist(saveEvent.getItem())
         );
     }
+
 }

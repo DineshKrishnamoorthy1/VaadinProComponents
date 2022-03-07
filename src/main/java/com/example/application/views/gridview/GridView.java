@@ -14,27 +14,37 @@ import java.util.List;
 
 public class GridView extends Div {
 
-    private ListDataProvider<Person> dataProvider;
-
+    /*private ListDataProvider<Person> dataProvider;
     private Grid.Column<Person> firstnamecolumn;
     private Grid.Column<Person> lastnamecolumn;
-
+*/
     public GridView() {
+/*
 
-        // Create a listing component for a bean type
         GridPro<Person> grid = new GridPro<>(Person.class);
-
-// Sets items using vararg beans
         grid.setItems(
                 new Person("Dinesh", "Krishnamoorthy"),
                 new Person("Ajith Kumar", "Anbalagan"),
                 new Person("Anandh", "Andrews"),
-                new Person("Abdul", "Rahman")
-        );
-add(grid);
+                new Person("Abdul", "Rahman"));
+                add(grid);
 
+*/
+        GridPro<Person> grid = new GridPro<>(Person.class);
 
-// or you can do it alternatively this way
+        grid.addEditColumn(Person::getFirstName)
+                .text(Person::setFirstName)
+                .setHeader("First name");
+
+        grid.addEditColumn(Person::getLastName)
+                .text(Person::setLastName)
+                .setHeader("Last name");
+        grid.setItems(
+                new Person("Dinesh", "Krishnamoorthy"),
+                new Person("Ajith Kumar", "Anbalagan"),
+                new Person("Anandh", "Andrews"),
+                new Person("Abdul", "Rahman"));
+        add(grid);
 
     }
 }
