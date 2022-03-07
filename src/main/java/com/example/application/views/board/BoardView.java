@@ -21,7 +21,7 @@ public class BoardView extends Div {
 
     public BoardView() {
         Board board = new Board();
-        add(createViewEvents());
+
 
 
         board.addRow(
@@ -45,6 +45,7 @@ public class BoardView extends Div {
                 createHighlight("Custom metric", "-123.45", 0.0));
 
         add(board1);
+        add(createViewEvents());
     }
 
     private Component createHighlight(String title, String value, Double percentage) {
@@ -79,6 +80,7 @@ public class BoardView extends Div {
         layout.setPadding(false);
         layout.setSpacing(false);
         return layout;
+
     }
 
     private Div createCell(String text) {
