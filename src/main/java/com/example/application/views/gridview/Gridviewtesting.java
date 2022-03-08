@@ -19,10 +19,7 @@ public class Gridviewtesting extends Div {
         grid.setSingleCellEdit(true);
 
         grid.setItems(
-                new Person("Dinesh", "Krishnamoorthy"),
-                new Person("Ajith Kumar", "Anbalagan"),
-                new Person("Anandh", "Andrews"),
-                new Person("Abdul", "Rahman"));
+                new Person("Dinesh", "Krishnamoorthy","dineshk12102000@gmail.com"));
         add(grid);
 
     }
