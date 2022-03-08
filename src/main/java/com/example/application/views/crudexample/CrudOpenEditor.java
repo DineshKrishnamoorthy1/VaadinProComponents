@@ -8,6 +8,7 @@ import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.crud.BinderCrudEditor;
 import com.vaadin.flow.component.crud.Crud;
 import com.vaadin.flow.component.crud.CrudEditor;
+import com.vaadin.flow.component.crud.CrudI18n;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Div;
@@ -47,6 +48,7 @@ public class CrudOpenEditor extends Div {
 
         setupGrid();
         setupDataProvider();
+        setupI18n();
         add(crud);
     }
 
@@ -120,5 +122,30 @@ public class CrudOpenEditor extends Div {
                 dataProvider.persist(saveEvent.getItem())
         );
     }
+    private void setupI18n() {
+        CrudI18n i18n = CrudI18n.createDefault();
+
+        i18n.setNewItem("Luo uusi");
+        i18n.setEditItem("Muuta tietoja");
+        i18n.setSaveItem("Tallenna");
+        i18n.setCancel("Peruuta");
+        i18n.setDeleteItem("Poista...");
+        i18n.setEditLabel("Muokkaa");
+
+        CrudI18n.Confirmations.Confirmation delete = i18n.getConfirm().getDelete();
+        delete.setTitle("Poista kohde");
+        delete.setContent("Haluatko varmasti poistaa tämän kohteen? Poistoa ei voi perua.");
+        delete.getButton().setConfirm("Poista");
+        delete.getButton().setDismiss("Peruuta");
+
+        CrudI18n.Confirmations.Confirmation cancel = i18n.getConfirm().getCancel();
+        cancel.setTitle("Hylkää muutokset");
+        cancel.setContent("Kohteessa on tallentamattomia muutoksia.");
+        cancel.getButton().setConfirm("Hylkää");
+        cancel.getButton().setDismiss("Peruuta");
+
+        crud.setI18n(i18n);
+    }
+
 
 }

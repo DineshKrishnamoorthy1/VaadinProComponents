@@ -1,0 +1,151 @@
+.uploads-div {
+    display : flex;
+    flex-direction : row;
+    flex-wrap:wrap;
+    width : 100%;
+    align-items : center;
+}
+.centered {
+    Margin:300px;
+    Padding:100 px;
+    display : flex;
+    width : 100%;
+    align-items : center;
+    justify-content:center;
+}
+.centered-button {
+    Margin:28px;
+    Padding:40 px;
+    display : flex;
+    width : 20%;
+    font-weight: bold;
+    align-items:center;
+
+}
+.css-text
+{
+  Margin:28px;
+  Padding:40 px;
+  display :flex;
+  width : 25%;
+  font-size: 10px;
+  align-items:center;
+  font: 20px Arial, sans-serif;
+
+
+}
+.image-container
+{
+ max-height: 600px;
+ max-width: 600px;
+ justify-content:center;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ width: 100%;
+
+}
+.centered-upload-asset
+{
+    display : flex;
+    align-items : center;
+    justify-content:center;
+    height: 200px;
+}
+
+.btnstyle {
+  background: 0px 0px;
+  margin: 3px;
+  height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px ;
+    display:80px,80px;
+  }
+  .addingfile{
+
+  max-height: 200px;
+   max-width: 200px;
+   justify-content:center;
+   align-items:center;
+   display: flex;
+   margin-left: auto;
+   margin-right: auto;
+   width: 100%;
+
+  }
+.centered-upload-asset
+{
+   justify-content:top;
+   align-items:center;
+}
+.cardview
+{
+
+   border: 2px;
+   width: 400px;
+   height: 250px;
+background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+background: #f3fafe 0% 0% no-repeat padding-box;
+box-shadow: 3px 3px 12px #00000014;
+border-radius: 16px;
+opacity: 1;
+}
+.lableview
+{
+/* Layout Properties */
+
+top: 300px;
+left: 192px;
+width: 162px;
+height: 60px;
+/* UI Properties */
+background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: 3px 3px 12px #00000014;
+border-radius: 16px;
+opacity: 1;
+
+}
+.lable_candidate
+{
+
+top: 367px;
+left: 192px;
+width: 162px;
+height: 55px;
+justify-content: space-between;
+/* UI Properties */
+background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: 3px 3px 12px #00000014;
+border-radius: 16px;
+opacity: 1;
+}
+.labelBlanks
+{
+      top: 367px;
+      left: 21px;
+      width: 162px;
+      height: 95px;
+      background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+      background: #FFFFFF 0% 0% no-repeat padding-box;
+      box-shadow: 3px 3px 12px #00000014;
+      border-radius: 16px;
+      opacity: 1;
+}
+.labelNoise
+{
+/* Layout Properties */
+top: 367px;
+left: 192px;
+width: 162px;
+height: 95px;
+/* UI Properties */
+background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: 3px 3px 12px #00000014;
+border-radius: 16px;
+opacity: 1;
+}
+
