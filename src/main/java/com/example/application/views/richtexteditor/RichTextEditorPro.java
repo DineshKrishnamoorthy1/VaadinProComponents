@@ -4,6 +4,8 @@ import com.example.application.views.MainLayout;
 import com.example.application.views.crudexample.DataService;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Html;
+import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -19,6 +21,9 @@ public class RichTextEditorPro extends Div {
         add(readonly());
         add(editor());
         add(theams());
+
+        Button button_valueforment = new Button("Value Formet", event -> UI.getCurrent().navigate("ValueFormet"));
+add(button_valueforment);
 
 
     }
