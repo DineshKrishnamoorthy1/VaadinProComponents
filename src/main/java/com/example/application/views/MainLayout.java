@@ -136,6 +136,7 @@ public class MainLayout extends AppLayout {
                 new MenuItemInfo("CRUD","la la-globe", CrudOpenEditor.class),//
                 new MenuItemInfo("RichTextEditor","la la-globe", RichTextEditorPro.class),//
                 new MenuItemInfo("ConfirmDialogBox","la la-globe", ConfirmDialogs.class),//
+                new MenuItemInfo("Map","la la-globe", MapView.class),//
                 new MenuItemInfo("Cookies","la la-globe", CookiesExample.class),//
 
 

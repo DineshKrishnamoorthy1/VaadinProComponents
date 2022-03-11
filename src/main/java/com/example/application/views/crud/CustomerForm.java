@@ -8,8 +8,6 @@ import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 
-import javax.xml.bind.Binder;
-import javax.xml.bind.PropertyException;
 
 public class CustomerForm extends FormLayout {
     private TextField firstName = new TextField("First name");
