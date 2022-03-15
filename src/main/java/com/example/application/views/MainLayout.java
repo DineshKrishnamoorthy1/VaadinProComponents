@@ -141,7 +141,7 @@ public class MainLayout extends AppLayout {
                 new MenuItemInfo("ConfirmDialogBox","la la-globe", ConfirmDialogs.class),//
                 new MenuItemInfo("Map","la la-globe", MapView.class),//
                 new MenuItemInfo("Cookies","la la-globe", CookiesExample.class),//
-               // new MenuItemInfo("Sheet","la la-globe", Sheet.class),//
+                new MenuItemInfo("Sheet","la la-globe", Sheet.class),//
 
 
 
