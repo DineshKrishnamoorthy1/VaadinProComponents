@@ -13,6 +13,9 @@ import com.example.application.views.gridview.GridView;
 import com.example.application.views.helloworld.HelloWorldView;
 import com.example.application.views.maps.MapView;
 import com.example.application.views.richtexteditor.RichTextEditorPro;
+import com.example.application.views.spreadsheet.Sheet;
+import com.example.application.views.spreadsheet.SpreadSheet;
+import com.vaadin.addon.spreadsheet.Spreadsheet;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -138,6 +141,8 @@ public class MainLayout extends AppLayout {
                 new MenuItemInfo("ConfirmDialogBox","la la-globe", ConfirmDialogs.class),//
                 new MenuItemInfo("Map","la la-globe", MapView.class),//
                 new MenuItemInfo("Cookies","la la-globe", CookiesExample.class),//
+               // new MenuItemInfo("Sheet","la la-globe", Sheet.class),//
+
 
 
 

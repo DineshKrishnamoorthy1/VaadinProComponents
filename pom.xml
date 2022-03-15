@@ -105,6 +105,13 @@
             <artifactId>vaadin-testbench</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.vaadin/vaadin-spreadsheet -->
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-spreadsheet</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+
         <!-- Include JUnit 4 support for TestBench and others -->
         <dependency>
             <groupId>org.junit.vintage</groupId>
@@ -127,12 +134,7 @@
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-board-flow</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
+
     </dependencies>
 
     <build>
