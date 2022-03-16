@@ -13,7 +13,9 @@ import com.vaadin.flow.router.Route;
 
 import java.util.regex.Pattern;
 
-@CssImport(value = "./styles/vaadin-grid-pro-editable-cells.css")
+
+//@CssImport(value = "./styles/hello-world.css",themeFor = "vaadin-grid")
+
 @Route(value = "GridView",layout = MainLayout.class)
 
 public class GridView extends Div {
@@ -23,7 +25,8 @@ public class GridView extends Div {
         GridPro<Person> grid = new GridPro<>();
         grid.setEditOnClick(true);
         grid.setEnterNextRow(true);
-        grid.addClassNames("editable-custom-effect");
+        grid.addClassName("editable-custom-effect");
+
 
 
 
@@ -33,6 +36,8 @@ public class GridView extends Div {
         grid.addEditColumn(Person::getLastName)
                 .text(Person::setLastName)
                 .setHeader("Last name(Editable)");
+
+
         grid.addEditColumn(Person::getEmail)
                 .text((person, newValue) -> {
                     if (isValidEmail(newValue)) {

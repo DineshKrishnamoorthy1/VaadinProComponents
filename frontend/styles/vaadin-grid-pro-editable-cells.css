@@ -1,12 +1,12 @@
-.editable-custom-effect
-{
+/* tag::editable-style[] */
+
 :host(.editable-custom-effect) [part~="editable-cell"]:hover,
-:host(.editable-custom-effect) [part~="editable-cell"]:focus {
-  background: var(--lumo-contrast-10pct);
+:host(.editable-custom-effect) [part~="editable-cell"]:
+focus {
+  background: var(--lumo-contrast-100pct);
 }
 
 :host(.editable-custom-effect) [part~="editable-cell"] {
-  background: var(--lumo-contrast-5pct);
+  background: var(--lumo-contrast-50pct);
 }
-}
-
+/* end::editable-style[] */
