@@ -7,10 +7,9 @@ import com.vaadin.flow.component.gridpro.GridPro;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.router.Route;
 
-import java.util.List;
 
 @Route("vaadin-grid-pro-editable-cells")
-@CssImport(".styles/vaadin-grid-pro-editable-cells.css")
+@CssImport(value = "./styles/vaadin-grid-pro-editable-cells.css",themeFor = "vaadin-grid")
 
 public class GridProStylingEditableCells extends Div {
 

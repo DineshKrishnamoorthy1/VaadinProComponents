@@ -9,6 +9,7 @@ import com.example.application.views.cookies.CookiesExample;
 import com.example.application.views.crud.Display;
 import com.example.application.views.crudexample.CrudOpenEditor;
 import com.example.application.views.gridpro.GridProExample;
+import com.example.application.views.gridview.GridProStylingEditableCells;
 import com.example.application.views.gridview.GridView;
 import com.example.application.views.helloworld.HelloWorldView;
 import com.example.application.views.maps.MapView;
@@ -142,6 +143,8 @@ public class MainLayout extends AppLayout {
                 new MenuItemInfo("Map","la la-globe", MapView.class),//
                 new MenuItemInfo("Cookies","la la-globe", CookiesExample.class),//
                 new MenuItemInfo("Sheet","la la-globe", Sheet.class),//
+                new MenuItemInfo("Sheet-sttyle","la la-globe", GridProStylingEditableCells.class),//
+
 
 
 
