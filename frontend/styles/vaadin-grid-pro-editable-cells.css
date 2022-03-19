@@ -1,14 +1,11 @@
-/* tag::editable-style[] */
 :host(.editable-custom-effect) [part~="editable-cell"]:hover,
 :host(.editable-custom-effect) [part~="editable-cell"]:focus {
   background: var(--lumo-contrast-10pct);
-}
+ }
 
 :host(.editable-custom-effect) [part~="editable-cell"] {
   background: var(--lumo-contrast-5pct);
 }
-.editable-custom-effect
-{
- background-color: #b1ffb7;
-}
-/* end::editable-style[] */
+:host(.editable-custom-effect) [part~="cell body-cell editable-cell"] {
+     background: var(--lumo-contrast-5pct);
+ }

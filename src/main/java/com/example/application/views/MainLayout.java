@@ -1,22 +1,17 @@
 package com.example.application.views;
 
 
-import com.example.application.views.about.AboutView;
 import com.example.application.views.board.BoardView;
 import com.example.application.views.chart.Chart;
 import com.example.application.views.confirmdialog.ConfirmDialogs;
 import com.example.application.views.cookies.CookiesExample;
-import com.example.application.views.crud.Display;
 import com.example.application.views.crudexample.CrudOpenEditor;
-import com.example.application.views.gridpro.GridProExample;
-import com.example.application.views.gridview.GridProStylingEditableCells;
+import com.example.application.views.GridProStyling.GridProStylingEditableCells;
 import com.example.application.views.gridview.GridView;
 import com.example.application.views.helloworld.HelloWorldView;
 import com.example.application.views.maps.MapView;
 import com.example.application.views.richtexteditor.RichTextEditorPro;
 import com.example.application.views.spreadsheet.Sheet;
-import com.example.application.views.spreadsheet.SpreadSheet;
-import com.vaadin.addon.spreadsheet.Spreadsheet;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;

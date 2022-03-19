@@ -17,6 +17,8 @@ import java.util.regex.Pattern;
 //@CssImport(value = "./styles/hello-world.css",themeFor = "vaadin-grid")
 
 @Route(value = "GridView",layout = MainLayout.class)
+@CssImport(value = "./styles/vaadin-grid-pro.css",themeFor = "vaadin-grid")
+
 
 public class GridView extends Div {
 

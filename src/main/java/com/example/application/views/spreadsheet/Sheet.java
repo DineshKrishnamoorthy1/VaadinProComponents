@@ -1,27 +1,21 @@
 package com.example.application.views.spreadsheet;
 
 import com.example.application.views.MainLayout;
-import com.vaadin.addon.spreadsheet.Spreadsheet;
-import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.spreadsheet.Spreadsheet;
 import com.vaadin.flow.router.Route;
-import com.vaadin.ui.Component;
 
-@Route(value = "sheet",layout = MainLayout.class)
-public class Sheet extends Div  {
-HorizontalLayout horizontalLayout=new HorizontalLayout();
-private Spreadsheet sheet=null;
+import java.io.IOException;
 
-    public Sheet() {
-        spreadsheetreturn();
+@Route(value = "sheet", layout = MainLayout.class)
+public class Sheet extends Div {
+
+    public Sheet() throws IOException {
+        setSizeFull();
+        add(new Spreadsheet(Sheet.class.getResourceAsStream("/testsheets/" + "Simple Invoice.xlsx")));
     }
-    private Component spreadsheetreturn()
-    {
-        sheet=new Spreadsheet();
-       sheet.setVisible(true);
-        return sheet;
 
-    }
+
 
 }
