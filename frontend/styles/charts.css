@@ -1,0 +1,29 @@
+
+
+:host(.ChartWaterFal) .highcharts-data-labels text {
+  fill: black;
+}
+
+:host(.ChartWaterFal) .highcharts-waterfall-series .highcharts-point {
+  fill: lightgreen;
+}
+
+:host(.ChartWaterFal) .highcharts-waterfall-series .highcharts-negative {
+  fill: lightcoral;
+}
+
+:host(.ChartWaterFal) .highcharts-waterfall-series .highcharts-sum {
+  fill: lightblue;
+}
+
+:host(.ChartWaterFal) .highcharts-waterfall-series .highcharts-intermediate-sum {
+  fill: lightgoldenrodyellow;
+}
+
+:host(.first-chart) g.highcharts-markers > .highcharts-point {
+  fill: yellow;
+}
+
+:host(.first-chart) .highcharts-data-label text {
+  fill: red;
+}
