@@ -44,6 +44,7 @@ public class Chart_Examples extends Div {
         HRZ.setAlignItems(FlexComponent.Alignment.CENTER);
         Div1.add(HRZ);
 
+
         add(Div1);
     }
 
