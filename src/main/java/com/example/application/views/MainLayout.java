@@ -3,6 +3,7 @@ package com.example.application.views;
 
 import com.example.application.views.board.BoardView;
 import com.example.application.views.chart.Chart;
+import com.example.application.views.chartexamples.Chart_Examples;
 import com.example.application.views.confirmdialog.ConfirmDialogs;
 import com.example.application.views.cookies.CookiesExample;
 import com.example.application.views.crudexample.CrudOpenEditor;
@@ -139,6 +140,7 @@ public class MainLayout extends AppLayout {
                 new MenuItemInfo("Cookies","la la-globe", CookiesExample.class),//
                 new MenuItemInfo("Sheet","la la-globe", Sheet.class),//
                 new MenuItemInfo("Sheet-sttyle","la la-globe", GridProStylingEditableCells.class),//
+                new MenuItemInfo("Chart-Examples","la la-globe", Chart_Examples.class),//
 
 
 

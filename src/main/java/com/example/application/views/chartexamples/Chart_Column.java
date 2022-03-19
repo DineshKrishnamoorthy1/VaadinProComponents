@@ -1,24 +1,101 @@
 package com.example.application.views.chartexamples;
 
-import com.example.application.views.chart.Chart;
-import com.vaadin.flow.component.charts.model.ChartType;
-import com.vaadin.flow.component.charts.model.Configuration;
+
+
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.charts.Chart;
+
+import com.vaadin.flow.component.charts.export.ExportOptions;
+import com.vaadin.flow.component.charts.export.SVGGenerator;
+import com.vaadin.flow.component.charts.model.*;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
+import java.io.IOException;
+
 @Route("Chart_C")
+@CssImport(value = "./styles/charts.css", themeFor = "vaadin-chart")
 public class Chart_Column extends Div {
 
-    public Chart_Column(){
-        H1 h1=new H1("Column Chart");
 
-        com.vaadin.flow.component.charts.Chart chart = new com.vaadin.flow.component.charts.Chart(ChartType.COLUMN);
-        Configuration conf = chart.getConfiguration();
-        conf.setTitle("Reindeer Kills by Predators");
-        conf.setSubTitle("Kills Grouped by Counties");
+    public Chart_Column() {
+
+
+        add(createViewEvents());
+        add(area());
+
     }
 
+    private Component createViewEvents() {
+        // Chart
+        com.vaadin.flow.component.charts.Chart chart = new com.vaadin.flow.component.charts.Chart(ChartType.AREA);
+        Configuration conf = chart.getConfiguration();
+
+        XAxis xAxis = new XAxis();
+        xAxis.setCategories("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+        conf.addxAxis(xAxis);
+
+        conf.getyAxis().setTitle("Values");
+
+        PlotOptionsArea plotOptions = new PlotOptionsArea();
+        plotOptions.setPointPlacement(PointPlacement.ON);
+        conf.addPlotOptions(plotOptions);
+
+        conf.addSeries(new ListSeries("Berlin", 189, 191, 191, 196, 201, 203, 209, 212, 229, 242, 244, 247));
+        conf.addSeries(new ListSeries("London", 138, 146, 148, 148, 152, 153, 163, 173, 178, 179, 185, 187));
+        conf.addSeries(new ListSeries("New York", 65, 65, 66, 71, 93, 102, 108, 117, 127, 129, 135, 136));
+        conf.addSeries(new ListSeries("Tokyo", 0, 11, 17, 23, 30, 42, 48, 49, 52, 54, 58, 62));
+
+        // Add it all together
+        VerticalLayout viewEvents = new VerticalLayout(chart);
+        viewEvents.setPadding(false);
+        viewEvents.setSpacing(false);
+        viewEvents.getElement().getThemeList().add("spacing-l");
+        Div div = new Div();
+        ExportOptions options = new ExportOptions();
+        // options.setExecuteFunctions(true);
+
+
+        conf.getyAxis().getLabels().setFormatter("function () { return this.value +' mm'; }");
+        options.setWidth(600);
+        options.setHeight(600);
+        try (SVGGenerator generator = new SVGGenerator()) {
+            String svg = generator.generate(chart.getConfiguration(), options);
+
+            div.getElement().setProperty("innerHTML", svg);
+        } catch (IOException | InterruptedException ex) {
+            // handle exceptions accordingly
+        }
+
+
+
+        VerticalLayout hrz=new VerticalLayout(viewEvents,div);
+
+        return hrz;
+    }
+
+    private Component area()
+    {
+
+        com.vaadin.flow.component.charts.Chart chart = new com.vaadin.flow.component.charts.Chart(ChartType.LINE);
+
+        Configuration config=new Configuration();
+
+        config.setTitle("Average Temperatures in Turku");
+        config.getLegend().setEnabled(false);
+
+        VerticalLayout arealayout = new VerticalLayout(chart);
+        arealayout.setPadding(false);
+        arealayout.setSpacing(false);
+        arealayout.getElement().getThemeList().add("spacing-l");
+
+        return arealayout;
+
+    }
 
 
 }

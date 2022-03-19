@@ -81,6 +81,33 @@ public class ChartBubble extends Div {
         yaxis.setPlotLines(yPlotLine);
         conf.addyAxis(yaxis);
 
+        Configuration configuration = chart.getConfiguration();
+
+        configuration.getxAxis().setType(AxisType.CATEGORY);
+
+        Navigator navigator = configuration.getNavigator();
+        navigator.setEnabled(true);
+        navigator.setMargin(75);
+
+        RangeSelector rangeSelector = new RangeSelector();
+        rangeSelector.setInputDateFormat("%YYYY-%MM-%DD:%H:%M");
+        rangeSelector.setInputEditDateFormat("%YYYY-%MM-%DD:%H:%M");
+        rangeSelector.setInputDateParser(
+                "function(value) {" +
+                        "value = value.split(/[:\\-]/);\n" +
+                        "return Date.UTC(\n" +
+                        "   parseInt(value[0], 10),\n" +
+                        "   parseInt(value[1], 10),\n" +
+                        "   parseInt(value[2], 10),\n" +
+                        "   parseInt(value[3], 10),\n" +
+                        "   parseInt(value[4], 10),\n" +
+                        ");}");
+        configuration.setRangeSelector(rangeSelector);
+        configuration.setRangeSelector(rangeSelector);
+
+
+
+
     }
 
 

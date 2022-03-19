@@ -2,6 +2,8 @@ package com.example.application.views.chart;
 
 import com.example.application.views.MainLayout;
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.charts.export.ExportOptions;
+import com.vaadin.flow.component.charts.export.SVGGenerator;
 import com.vaadin.flow.component.charts.model.*;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -9,11 +11,15 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.router.Route;
 
+import java.io.IOException;
+
 @Route(value = "chart",layout = MainLayout.class)
 public class Chart extends Div {
 
 
     public Chart() {
+
+
         add(createViewEvents());
         add(area());
 
@@ -44,7 +50,24 @@ public class Chart extends Div {
         viewEvents.setPadding(false);
         viewEvents.setSpacing(false);
         viewEvents.getElement().getThemeList().add("spacing-l");
-        return viewEvents;
+        Div div = new Div();
+        ExportOptions options = new ExportOptions();
+        // options.setExecuteFunctions(true);
+
+        conf.getyAxis().getLabels().setFormatter("function () { return this.value +' mm'; }");
+        options.setWidth(600);
+        options.setHeight(600);
+        try (SVGGenerator generator = new SVGGenerator()) {
+            String svg = generator.generate(chart.getConfiguration(), options);
+
+            div.getElement().setProperty("innerHTML", svg);
+        } catch (IOException | InterruptedException ex) {
+            // handle exceptions accordingly
+        }
+
+        VerticalLayout hrz=new VerticalLayout(viewEvents,div);
+
+        return hrz;
     }
 
     private Component area()
