@@ -1,7 +1,7 @@
 package com.example.application.views.chartexamples;
 
 import com.example.application.views.MainLayout;
-import com.vaadin.client.ui.VHorizontalLayout;
+
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
