@@ -45,6 +45,7 @@ public class Chart_Examples extends Div {
         Div1.add(HRZ);
 
 
+
         add(Div1);
     }
 
